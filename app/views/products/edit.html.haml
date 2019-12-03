@@ -73,7 +73,7 @@
                     .select-default
                       = f.select :category_id, options_for_select(@category_children_default.map{|c|[c.name, c.id, {'data-category'=>c.id, selected: @product.category.parent.name }]}, @product.category.parent.name), {}, {class: 'select-wrap', id: 'child_category'}
                       %i.fas.fa-chevron-down
-                //孫カテゴリーを持つ場合のメニュー表示
+                  //孫カテゴリーを持つ場合のメニュー表示
                 - else
                   #children_wrapper.select-wrap
                     .select-default
