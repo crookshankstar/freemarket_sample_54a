@@ -71,17 +71,17 @@
                 - if (@product.category.name == 'オートバイ車体')|| ( (@product.category.name == 'その他') && (@product.category.children?) )
                   #children_wrapper.select-wrap
                     .select-default
-                      = f.select :category_id, options_for_select(@category_children_default.map{|c|[c.name, c.id, {'data-category'=>c.id, selected: @product.category.parent.name }]}, @product.category.parent.name), {}, {class: 'select-wrap', id: 'child_category'}
+                      = f.select :category_id, options_for_select(@category_children_default.map{|c|[c.name, c.id, {'data-category'=>c.id }]}, @product.category.parent.id), {}, {class: 'select-wrap', id: 'child_category'}
                       %i.fas.fa-chevron-down
                   //孫カテゴリーを持つ場合のメニュー表示
                 - else
                   #children_wrapper.select-wrap
                     .select-default
-                      = f.select :category_id, options_for_select(@category_children_default.map{|c|[c.name, c.id, {'data-category'=>c.id, selected: @product.category.parent.name }]}, @product.category.parent.name), {}, {class: 'select-wrap', id: 'child_category'}
+                      = f.select :category_id, options_for_select(@category_children_default.map{|c|[c.name, c.id, {'data-category'=>c.id }]}, @product.category.parent.id), {}, {class: 'select-wrap', id: 'child_category'}
                       %i.fas.fa-chevron-down
                   #grandchildren_wrapper.select-wrap
                     .select-default
-                      = f.select :category_id, options_for_select(@category_grandchildren_default.map{|c|[c.name,c.id, {'data-category'=>c.id, selected: @product.category.name }]}, @product.category.parent.name), {}, {class: 'select-wrap', id: 'child_category'}
+                      = f.select :category_id, options_for_select(@category_grandchildren_default.map{|c|[c.name,c.id, {'data-category'=>c.id }]}, @product.category.id ), {}, {class: 'select-wrap', id: 'child_category'}
                       %i.fas.fa-chevron-down
 
               #brand_wrapper.content-form__status
