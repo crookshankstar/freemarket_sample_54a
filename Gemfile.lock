@@ -99,7 +99,7 @@ GEM
     enum_help (0.0.17)
       activesupport (>= 3.0.0)
     erubis (2.7.0)
-    excon (0.67.0)
+    excon (0.71.0)
     execjs (2.7.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
